@@ -1164,6 +1164,11 @@ progress {
     --bs-gutter-y: 3rem;
   }
 }
+
+#profile {
+  height: 50%;
+}
+
 @media (min-width: 768px) {
   .col-md {
     flex: 1 0 0%;
