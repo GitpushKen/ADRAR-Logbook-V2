@@ -7,44 +7,61 @@
     <title>SASS Practice</title>
 </head>
 <body style="background-color: #D6E4EF;">
-    <div class="container col-3 justify-content-center mt-5">
-        <div class="row justify-content-center col-2" style="width: 20rem;">
+    <div class="container-sm col-md-3 justify-content-center mt-md-4">
+        <div class="container-md row justify-content-center col-md-2" style="width: 20rem;">
           <img class="col-2" src="../assets/imgs/TP Sass/Union.svg" alt="">
-          <h3 class="col-6 mb-0">Apprigator</h3> 
+          <h3 class="col-6 mb-0" style="font-size: 1.3rem;">Apprigator</h3> 
         </div>
-        <div class="card mt-4 rounded-3 border-0" style="width: 20rem; background-image: linear-gradient(to top, #D7E5EF, #FFFFFF); box-shadow: 0 25px 30px -20px #5a829e;">
-            <img src="../assets/imgs/TP Sass/Login/Rectangle 2.svg" class="card-img-top p-3 pb-0 rounded-4" alt="...">
-            <div class="col p-2 pt-0 pb-0 position-relative">
-                <div class="profile-picture position-absolute col-2 top-0 start-25 translate-middle-y">
-                    <img class="ms-4 " style="width: 75px;" src="../assets/imgs/TP Sass/Login/Ellipse 1.svg" alt="">
+        <div class="row card col mt-4 rounded-3 border-0 justify-content-center" style="max-width:20rem;background-image: linear-gradient(to top, #D7E5EF, #FFFFFF); box-shadow: 0 25px 30px -20px #5a829e;">
+            <div id="profile" class=" col mb-4 justify-content-center position-relative">
+              <img src="../assets/imgs/TP Sass/Login/Rectangle 2.svg" class="card-img-top p-1 pt-3 pb-0 rounded-3" alt="...">
+              <div class="profile row position-absolute top-100 translate-middle-y gap-3 mt-1 ms-2">
+                <div class="profile-picture col-1 me-3 mt-1">
+                  <img style="width: 70px;" src="../assets/imgs/TP Sass/Login/Ellipse 1.svg" alt="">
                 </div>
-                <div class="row col-12 ms-4 mt-4 pt-2 translate-middle-y">
-                  <p class=" col-7  p-0 text-end" style="font-size: 0.85rem;">Welcome back, </p>
-                  <p class="col-2 p-0 fw-bold text-end text-danger" style="font-size: 0.85rem;">Robert</p>
+                <div class="row col-9 mt-4 pt-4 ps-0 ms-1">
+                  <p class=" col-8  p-0 pe-1 text-end" style="font-size: 0.80rem;">Welcome back,</p>
+                  <p class="col-4 p-0 pe-2 fw-bold text-danger" style="font-size: 0.80rem;">Robert</p>
                 </div>
+              </div>
             </div>
-            <div class="container col-11">
-              <p class="mb-0 p-1 pb-0 fw-bold" style="font-size: 0.70rem;">Email</p>
+            <div class="container col-11 mt-4">
+              <p class="mb-1 p-1 pb-0 fw-bold" style="font-size: 0.70rem;">Email</p>
               <div class="input-group flex-nowrap p-1 pt-0 pb-0">
                 <input type="text" class="form-control" style="font-size: 0.70rem;" placeholder="robert.langster@gmail.com" aria-label="Username" aria-describedby="addon-wrapping">
+                <button class="btn border border-start-0 bg-white" type="button" id="button-addon2">
+                  <img src="../assets/imgs/TP Sass/Login/eye/Vector.svg" style="scale: 0.8; opacity: 0;" alt="" srcset="">
+                </button>
               </div>
-              <p class="mb-0 mt-2 p-1 pb-0 fw-bold" style="font-size: 0.70rem;">Password</p>
+              <p class="mb-1 mt-2 p-1 pb-0 fw-bold" style="font-size: 0.70rem;">Password</p>
               <div class="input-group flex-nowrap p-1 pt-0 mb-2">
-                <input type="text" class="form-control" style="font-size: 0.70rem;" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" style="font-size: 0.70rem;" placeholder="●●●●●●●" aria-label="Username" aria-describedby="addon-wrapping">
+                <button class="btn border border-start-0 bg-white" type="button" id="button-addon2">
+                  <img src="../assets/imgs/TP Sass/Login/eye/Vector.svg" style="scale: 0.8;" alt="" srcset="">
+                </button>
               </div>
-              <div class="form-check col-6 ms-1" style="font-size: 0.70rem;">
+              <div class="form-check col-12 ms-1" style="font-size: 0.70rem;">
                 <input class="form-check-input bg-danger" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                  Remember me
-                </label>
+                <div class="labels col-12 row">
+                  <label class="form-check-label col" for="flexCheckChecked">
+                    Remember me
+                  </label>
+                  <label class="form-check-label col text-end pe-0 text-decoration-underline" for="flexCheckChecked">
+                    Forgot password?
+                  </label>
+                </div>
               </div>
               <div class="row card-body col pt-1 pb-2 justify-content-center">
                 <button type="button" class="btn btn-danger btn-sm col" style="font-size: 0.65rem;">Sign Up</button>
               </div>
               <p class="text-center pt-1 fw-bold mb-2" style="font-size: 0.70rem;">I'm not Robert</p>
               <div class="row column-gap-3 pb-4 pt-1 justify-content-center col">
-                <button type="button" class="btn btn-secondary col-5 fw-bold" style="font-size: 0.60rem;">Login as new user</button>
-                <button type="button" class="btn btn-outline-danger col-5 fw-bold" style="font-size: 0.60rem;">Sign Up</button>
+                <button type="button" class="btn btn-secondary col-5 fw-bold" style="font-size: 0.60rem; background-color: rgb(26, 26, 26);">
+                  <p class="m-0 pt-1 pb-1">Login as new user</p>
+                </button>
+                <button type="button" class="btn btn-outline-danger col-5 fw-bold" style="font-size: 0.60rem;">
+                  <p class="m-0 pt-1 pb-1">Sign Up</p>
+                </button>
               </div>
             </div>
           </div>
