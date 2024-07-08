@@ -31,6 +31,11 @@ const volUp = document.querySelector("#volOff");
 const backToggle = document.querySelector("#backToggle");
 const backDown = document.querySelector("#backOff");
 
+const pokedex = document.querySelector(".pokedex");
+const opened = document.querySelector("#opened");
+const closed = document.querySelector("#closed");
+
+
 const healthBar1 = document.querySelector(".healthBar1");
 const healthBar2 = document.querySelector(".healthBar2");
 
@@ -58,6 +63,18 @@ buttonReset.addEventListener("mousedown", () => {
 buttonReset.addEventListener("mouseup", () => {
   resetDown.classList.remove("visible");
 });
+
+pokedex.addEventListener('mouseover', () => {
+  closed.classList.toggle('hide')
+  opened.classList.toggle('visible')
+})
+pokedex.addEventListener('mouseout', () => {
+  closed.classList.toggle('hide')
+  opened.classList.toggle('visible')
+})
+pokedex.addEventListener('click', () => {
+  window.location.href = "./index.html";
+})
 
 let musicPlay = true;
 
@@ -155,13 +172,13 @@ const pokeBattle = () => {
       let randomPokemon = Math.floor(Math.random() * 386);
 
       const poke = await fetch(
-        `http://pokeapi.co/api/v2/pokemon/${randomPokemon}/`
+        `https://pokeapi.co/api/v2/pokemon/${randomPokemon}`
       );
       const data = await poke.json();
       console.log(data);
 
       const pokeLegend = await fetch(
-        `http://pokeapi.co/api/v2/pokemon-species/${randomPokemon}/`
+        `https://pokeapi.co/api/v2/pokemon-species/${randomPokemon}`
       );
       const dataLegend = await pokeLegend.json();
       console.log(dataLegend);
