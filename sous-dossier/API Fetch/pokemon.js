@@ -155,13 +155,13 @@ const pokeBattle = () => {
       let randomPokemon = Math.floor(Math.random() * 386);
 
       const poke = await fetch(
-        `https://pokeapi.firebaseapp.com/api/v2/pokemon/${randomPokemon}/`
+        `http://pokeapi.co/api/v2/pokemon/${randomPokemon}/`
       );
       const data = await poke.json();
       console.log(data);
 
       const pokeLegend = await fetch(
-        `https://pokeapi.firebaseapp.com/api/v2/pokemon-species/${randomPokemon}/`
+        `http://pokeapi.co/api/v2/pokemon-species/${randomPokemon}/`
       );
       const dataLegend = await pokeLegend.json();
       console.log(dataLegend);
