@@ -292,30 +292,44 @@ const pokeBattle = () => {
   poundS.src = "./sounds/Pound.mp3";
   poundS.volume = 1;
 
-  let intervalHeal = 20;
-  let heal = setInterval(barHealed, 10);
-  function barHealed() {
-    if (intervalHeal <= 0) {
-      clearInterval(heal);
-    } else {
-      healthBar2.value += 1;
-      console.log(currentHealth[1]);
-      console.log(healthBar2.value);
-      intervalHeal--;
-    }
-  }
 
-  buttonPotion.addEventListener("click", () => {
+
+
+
+  function healing() {
+    let intervalHeal = 20;
+    let heal = setInterval(barHealed, 10);
+
+    function barHealed() {
+      if (intervalHeal <= 0) {
+        clearInterval(heal);
+      } else {
+        healthBar2.value += 1;
+        console.log(healthBar2.value);
+        intervalHeal--;
+
+      } 
+    }
     console.log("Healed");
     if (currentHealth[1] < maxHealth[1]) {
       currentHealth[1] += 20;
-      barHealed();
+      if (currentHealth[1] >= maxHealth[1] / 6) {
+        healthBar2.classList.remove("low");
+      }
+      if (currentHealth[1] >= maxHealth[1] / 2.5) {
+        healthBar2.classList.remove("medium");
+      }
+      console.log(currentHealth[1]);
       
     } else if (currentHealth[1] - maxHealth[1] > 20) {
       currentHealth[1] == maxHealth[1];
-      barHealed();
+      console.log(currentHealth[1]);
+
     }
-  });
+    barHealed();
+    console.log(healthBar2.value);
+    buttonPotion.removeEventListener("click", healing);
+  }
 
 
   buttonAttack.addEventListener("click", function turn1() {
@@ -343,6 +357,7 @@ const pokeBattle = () => {
         console.log(currentHealth[0]);
         console.log(healthBar1.value);
         interval--;
+        
       }
     }
     bar();
@@ -414,6 +429,7 @@ const pokeBattle = () => {
           }
         }
         bar2();
+        buttonPotion.addEventListener("click", healing);
 
         // console.log("HP humain: après" + pokemons[1].hp);
         document.getElementById("turn-infos").innerHTML =
@@ -436,6 +452,7 @@ const pokeBattle = () => {
         } else if (currentHealth[1] <= maxHealth[1] / 2.5) {
           healthBar2.classList.add("medium");
         }
+
         // Si il en a pas, on cut
         if (pokemons[1].isKO) {
           infoPanel.classList.add("visible");
@@ -491,3 +508,7 @@ pokeBattle();
 //     barHealed();
 //   }
 // });
+
+// NE PAS METTRE LES PTN DE PARENTHESES DANS UN EVENT CLICK OU LA FONCTION SERA EXECUTER MEME SANS CLICK
+
+// IDEE : Clear un interval avec un setTimeout
